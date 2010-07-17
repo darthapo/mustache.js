@@ -5,3 +5,9 @@ exports.version = Mustache.version;
 exports.to_html = function() {
   return Mustache.to_html.apply(this, arguments);
 };
+
+// For express compliance...
+exports.render = function(template, options) {
+  options = options || {};
+  return Mustache.to_html(template, (options.locals || {}));
+};
