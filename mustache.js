@@ -47,9 +47,8 @@ var Mustache = function() {
       Sends parsed lines
     */
     send: function(line) {
-      if(line != "") {
-        this.buffer.push(line);
-      }
+      this.buffer.push(line);
+      // M@: Yes, we even want lines that are empty strings... Think about TEXTAREAs and PREs
     },
 
     /*
